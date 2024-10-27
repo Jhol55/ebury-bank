@@ -8,7 +8,7 @@ interface IFormContext {
     register: UseFormRegister<FieldValues>;
     errors: FieldErrors<FieldValues>;
     maskFunctions: Record<string, (e: React.ChangeEvent<HTMLInputElement>) => void>;
-    watch: UseFormWatch<FieldValues>
+    watch: UseFormWatch<FieldValues>;
 }
 
 const FormContext = createContext<IFormContext | null>(null);

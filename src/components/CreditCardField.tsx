@@ -1,30 +1,35 @@
 "use client"
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useId, useState } from 'react';
 import { useFormContext } from './CreditCardForm';
 
 interface ICreditCardField {
     children: React.ReactNode;
-    type?: "text" | "number"
-    options?: number[]
+    type?: "text" | "number";
+    options?: number[];
     fieldName: keyof Record<string, (e: ChangeEvent<HTMLInputElement>) => void>;
-    onFocus?: () => void
-    onBlur?: () => void
+    onFocus?: () => void;
+    onBlur?: () => void;
 }
 
 const CreditCardField = ({ children, type, options, fieldName, onFocus, onBlur }: ICreditCardField) => {
     const { register, errors, maskFunctions } = useFormContext();
     const [showLabel, setShowLabel] = useState(true);
+    const id = useId();
 
     return (
         <fieldset className='flex flex-col relative w-full'>
-            <label className='absolute -z-10 whitespace-nowrap overflow-hidden text-lg text-[#C6C6C6]'>
+            <label
+                htmlFor={id}
+                className='absolute -z-10 whitespace-nowrap overflow-hidden text-lg text-[#C6C6C6]'
+            >
                 {showLabel && children}
             </label>
 
             {!options?.length ? (
                 <input
                     {...register(fieldName)}
+                    id={id}
                     type={type}
                     className='w-full border-b-2 outline-0 bg-transparent text-lg text-gray-600'
                     onFocus={() => onFocus && onFocus()}
@@ -40,6 +45,7 @@ const CreditCardField = ({ children, type, options, fieldName, onFocus, onBlur }
             ) : (
                 <select
                     {...register(fieldName)}
+                    id={id}
                     className="w-full h-[calc(1.75rem+2px)] border-b-2 outline-0 bg-transparent text-lg text-gray-600"
                     onFocus={() => onFocus && onFocus()}
                     onBlur={(e) => {
