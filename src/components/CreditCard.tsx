@@ -14,7 +14,7 @@ export interface ICreditCardFields {
 
 interface ICreditCardData {
     creditCardData: ICreditCardFields;
-    flip?: boolean
+    flip: boolean
 }
 
 export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
@@ -22,7 +22,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
     const flag = getCreditCardFlag(creditCardData?.cardNumber);
 
     useMemo(() => {
-        if (!flip) setFlipped(false)
+        setFlipped(flip)
     }, [flip])
 
     return (
@@ -36,7 +36,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                 style={{
                     backfaceVisibility: "hidden",
                     transformStyle: "preserve-3d",
-                    transform: flipped || flip ? "rotateY(180deg)" : "rotateY(0deg)",
+                    transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
                     transition: "transform 0.4s ease-in-out"
                 }}
             >
@@ -69,7 +69,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                 style={{
                     backfaceVisibility: "hidden",
                     transformStyle: "preserve-3d",
-                    transform: flipped || flip ? "rotateY(0deg)" : "rotateY(-180deg)",
+                    transform: flipped ? "rotateY(0deg)" : "rotateY(-180deg)",
                     transition: "transform 0.4s ease-in-out"
                 }}
             >
