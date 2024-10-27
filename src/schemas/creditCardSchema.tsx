@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { checkCreditCardNumber } from '../utils/checkCreditCardNumber';
 
 
-const creditCardSchema = z.object({
+export const creditCardSchema = z.object({
   cardNumber: z
     .string()
     .refine(checkCreditCardNumber, {
@@ -32,5 +32,3 @@ const creditCardSchema = z.object({
     .min(1, "O número de parcelas é obrigatório"),
 
 });
-
-export { creditCardSchema };

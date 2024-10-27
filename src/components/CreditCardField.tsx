@@ -40,7 +40,7 @@ const CreditCardField = ({ children, type, options, fieldName, onFocus, onBlur }
             ) : (
                 <select
                     {...register(fieldName)}
-                    className="w-full h-[calc(1.75rem+2px)] border-b-2 outline-0 bg-transparent text-lg text-[#C6C6C6]"
+                    className="w-full h-[calc(1.75rem+2px)] border-b-2 outline-0 bg-transparent text-lg text-gray-600"
                     onFocus={() => onFocus && onFocus()}
                     onBlur={(e) => {
                         setShowLabel(!e.target.value.length);
