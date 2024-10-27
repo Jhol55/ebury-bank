@@ -89,7 +89,7 @@ export default function App() {
         </div>
 
       </section>
-      <section className='flex flex-col lg:items-center items-start lg:mt-0 mt-44 items-start lg:justify-around w-full h-screen p-4'>
+      <section className='flex flex-col lg:items-center items-start lg:mt-0 mt-44 items-start lg:justify-around w-full lg:h-screen h-fit p-4'>
         <Stepper
           className='lg:flex hidden'
           step={2}
