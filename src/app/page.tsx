@@ -44,7 +44,7 @@ export default function App() {
   return (
     <main className='flex lg:flex-row flex-col'>
       <section className='relative lg:min-w-[510px] min-w-full h-[65vw] max-h-[350px] z-50'>
-        <div className='flex lg:fixed lg:w-[350px] w-full h-full bg-[#4BDE95]' />
+        <div className='flex lg:fixed sticky lg:w-[350px] w-full lg:h-full h-[350px] bg-[#4BDE95]' />
         <div className='absolute top-0 left-1/2 -translate-x-1/2 p-4'>
           <div className='flex items-center h-fit lg:mb-10 mt-4 gap-4'>
             <a href='#back' className='flex gap-4'>
