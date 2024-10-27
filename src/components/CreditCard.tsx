@@ -32,7 +32,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
             style={{ perspective: "1000px" }}
         >
             <div
-                className="absolute inset-0 flex flex-col justify-center h-full w-full rounded-2xl px-12 py-6 text-white bg-gradient-to-r from-[#898989] via-[#747474] to-[#5f5f5f] shadow-2xl"
+                className="absolute inset-0 flex flex-col justify-center h-full w-full rounded-2xl sm:px-12 px-8 py-6 text-white bg-gradient-to-r from-[#898989] via-[#747474] to-[#5f5f5f] shadow-2xl"
                 style={{
                     backfaceVisibility: "hidden",
                     transformStyle: "preserve-3d",
@@ -50,15 +50,15 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                     />
                 </div>
                 <div className="flex items-center h-1/4">
-                    <span className="text-white md:text-2xl text-xl tracking-wide">
+                    <span className="text-white sm:text-2xl text-xl tracking-wide">
                         {creditCardData?.cardNumber + "**** **** **** ****".substring(creditCardData?.cardNumber.length, 19)}
                     </span>
                 </div>
                 <div className="flex justify-between items-center h-1/3">
-                    <span className="text-white text-xl">
+                    <span className="text-white sm:text-xl text-lg">
                         {creditCardData?.cardName.toUpperCase() || "NOME DO TITULAR"}
                     </span>
-                    <span className="text-white text-xl">
+                    <span className="text-white sm:text-xl text-lg">
                         {creditCardData?.expiryDate + "00/00".substring(creditCardData?.expiryDate.length, 5)}
                     </span>
                 </div>
@@ -77,7 +77,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                     <div className="h-10 mt-10 bg-[#454545]"></div>
                 </div>
                 <div className="flex flex-col justify-center h-full w-[70%]">
-                    <span className="text-black text-xl text-end tracking-widest bg-white p-2">
+                    <span className="text-black sm:text-xl text-lg text-end tracking-widest bg-white p-2">
                         {creditCardData?.cvv + "***".substring(creditCardData?.cvv.length, 3)}
                     </span>
                 </div>
