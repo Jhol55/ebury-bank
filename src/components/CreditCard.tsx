@@ -40,7 +40,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                     transition: "transform 0.4s ease-in-out"
                 }}
             >
-                <div className="min-h-[128px] w-full">
+                <div className="h-1/2 w-full">
                     <Image
                         src={`/flags/${flag}.svg`}
                         width={128}
@@ -49,7 +49,7 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                         className={`${!flag ? "hidden" : "-translate-x-[2px]"}`}
                     />
                 </div>
-                <div className="flex items-center h-1/4">
+                <div className="flex items-center h-1/3">
                     <span className="text-white sm:text-2xl text-xl tracking-wide">
                         {creditCardData?.cardNumber + "**** **** **** ****".substring(creditCardData?.cardNumber.length, 19)}
                     </span>
