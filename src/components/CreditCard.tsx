@@ -49,12 +49,12 @@ export const CreditCard = ({ creditCardData, flip }: ICreditCardData) => {
                         className={`${!flag ? "hidden" : "-translate-x-[2px]"}`}
                     />
                 </div>
-                <div className="flex items-center h-1/3">
+                <div className="flex items-center h-1/4">
                     <span className="text-white sm:text-2xl text-xl tracking-wide">
                         {creditCardData?.cardNumber + "**** **** **** ****".substring(creditCardData?.cardNumber.length, 19)}
                     </span>
                 </div>
-                <div className="flex justify-between items-center h-1/3">
+                <div className="flex justify-between items-center h-1/4">
                     <span className="text-white sm:text-xl text-lg">
                         {creditCardData?.cardName.toUpperCase() || "NOME DO TITULAR"}
                     </span>
